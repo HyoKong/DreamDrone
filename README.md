@@ -1,6 +1,6 @@
 # DreamDrone
 ## [[Project Page]](https://hyokong.github.io/publications/dreamdrone-page/) [[Paper]](https://arxiv.org/abs/2207.01696.pdf)
 
-![teaser_image](./figs/fig1-long.png)
+<img src="./figs/fig1-long.png" alt="teaser_image" width="80%"/>
 
-![gradio_image](./figs/gradio-page.png)
+<img src="./figs/gradio-page.png" alt="gradio_image" width="100%"/>
