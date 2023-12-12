@@ -97,12 +97,6 @@ class DDIMBackward(StableDiffusionPipeline):
             latents,
         )
 
-        # if callback and self.processor:
-        #     self.unet.set_attn_processor(self.processor)
-        #     self.processor.record = True
-        # elif self.processor:
-        #     self.processor.record = False
-
         extra_step_kwargs = self.prepare_extra_step_kwargs(generator, eta)
         num_warmup_steps = len(timesteps) - num_inference_steps * self.scheduler.order
         with self.progress_bar(total=num_inference_steps) as progress_bar:
@@ -114,9 +108,6 @@ class DDIMBackward(StableDiffusionPipeline):
                 # expand the latents if we are doing classifier free guidance
                 latent_model_input = torch.cat([latents] * 2) if do_classifier_free_guidance else latents
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
-
-                # if self.processor:
-                #     self.processor.timestep = t.item()
 
                 # predict the noise residual
                 noise_pred = self.unet(
@@ -234,12 +225,6 @@ class DDIMBackward(StableDiffusionPipeline):
             latents,
         )
 
-        # if callback and self.processor:
-        #     self.unet.set_attn_processor(self.processor)
-        #     self.processor.record = True
-        # elif self.processor:
-        #     self.processor.record = False
-
         kv_injection_timesteps = self.scheduler.timesteps[:int(len(self.scheduler.timesteps) * attn)]
         f_injection_timesteps = self.scheduler.timesteps[:int(len(self.scheduler.timesteps) * f)]
         register_attention_control_efficient_kv_w_mask(self, kv_injection_timesteps, mask=latent_mask, do_classifier_free_guidance=do_classifier_free_guidance)
@@ -257,16 +242,12 @@ class DDIMBackward(StableDiffusionPipeline):
                 # Set requires grad
                 if guidance_loss_scale != 0: 
                     latents = latents.detach().requires_grad_()
-
-                
+             
                 # expand the latents if we are doing classifier free guidance
                 latent_model_input = latents    # latents: ori_z + wrap_z
                 if do_classifier_free_guidance:
                     latent_model_input = torch.cat([latent_model_input, latent_model_input[1:]], dim=0)
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
-
-                # if self.processor:
-                #     self.processor.timestep = t.item()
 
                 # predict the noise residual
                 if guidance_loss_scale != 0:
@@ -296,7 +277,6 @@ class DDIMBackward(StableDiffusionPipeline):
                     noise_pred_text, wrap_noise_pred_text = noise_pred.chunk(3)
                     noise_pred = wrap_noise_pred_text
 
-                # Normalize (see https://enzokro.dev/blog/posts/2022-11-15-guidance-expts-1/)
                 if cfg_norm:
                     noise_pred = noise_pred * (torch.linalg.norm(wrap_noise_pred_uncond) / torch.linalg.norm(noise_pred))
 
