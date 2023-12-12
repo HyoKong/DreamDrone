@@ -1,15 +1,11 @@
-import torch, cv2
+import torch
 import numpy as np
 import torch.nn.functional as F
-from diffusers import StableDiffusionPipeline, LMSDiscreteScheduler
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
 from typing import Any, Callable, Dict, List, Optional, Union
 from sd.pnp_utils import register_time, register_attention_control_efficient_kv_w_mask, register_conv_control_efficient_w_mask
-import copy
 import torch.nn as nn
 from sd.dift_sd import MyUNet2DConditionModel, OneStepSDPipeline
-from torch.autograd import Variable
-import torchvision.transforms as Trans
 import ipdb
 from tqdm import tqdm
 from lib.midas import MiDas
