@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 import torch.nn.functional as F
+from diffusers import StableDiffusionPipeline
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
 from typing import Any, Callable, Dict, List, Optional, Union
 from sd.pnp_utils import register_time, register_attention_control_efficient_kv_w_mask, register_conv_control_efficient_w_mask
@@ -432,4 +433,3 @@ def DDPM_forward(x_t_dot, t_start, delta_t, ddpm_scheduler, generator):
         mu_ = ((1 - beta) ** 0.5) * x_t_dot
         x_t_dot = mu_ + std_ * noise
     return x_t_dot
-
