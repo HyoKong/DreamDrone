@@ -1,5 +1,5 @@
 # DreamDrone
-## [[Project Page]](https://hyokong.github.io/publications/dreamdrone-page/) [[Paper]](https://arxiv.org/abs/2207.01696.pdf)
+## [[Project Page]](https://hyokong.github.io/dreamdrone-page/) [[Paper]](https://arxiv.org/abs/2207.01696.pdf)
 
 <img src="./figs/fig1-long.png" alt="teaser_image" width="80%"/>
 
