@@ -139,6 +139,7 @@ def save_video(frames, fps=10, out_path='output/output.mp4'):
     video_dims = (512, 512)
     fourcc = cv2.VideoWriter_fourcc(*'MP4V')    
     video = cv2.VideoWriter(out_path,fourcc, fps, video_dims)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     for frame in frames:
         video.write(cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR))
     video.release()
@@ -282,6 +283,8 @@ def main(args):
             # DreamDrone
 
             Official implementation of [DreamDrone](https://hyokong.github.io/publications/dreamdrone-page/).
+
+            **TL;DR:** Navigate dreamscapes with a ***click*** – your chosen point guides the drone's flight in a thrilling visual journey.
 
             ## Tutorial
 
