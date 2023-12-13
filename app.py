@@ -332,7 +332,7 @@ def main(args):
         with gr.Row():
             with gr.Column(scale=0.2):
                 with gr.Accordion("Direction"):
-                    speed_r = gr.Number(value=0.05, label='Rotation Speed', step=0.01, minimum=0, maximum=1)
+                    speed_r = gr.Number(value=0.1, label='Rotation Speed', step=0.01, minimum=0, maximum=1)
                     speed_x = gr.Number(value=0, label='Speed X-axis', step=1, minimum=-10, maximum=20.0)
                     speed_y = gr.Number(value=0, label='Speed Y-axis', step=1, minimum=-10, maximum=20.0)
                     speed_z = gr.Number(value=5, label='Speed Z-axis', step=1, minimum=-10, maximum=20.0)
@@ -442,7 +442,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', default='cuda')
-    parser.add_argument('--model_id', default='ckpt/stable-diffusion-2-1-base')
+    parser.add_argument('--model_id', default='stabilityai/stable-diffusion-2-1-base')
     parser.add_argument('--depth_model', default='dpt_beit_large_512', choices=['dpt_beit_large_512', 'dpt_swin2_large_384'])
     parser.add_argument('--share', action='store_true')
     parser.add_argument('-p', '--port', type=int, default=None)
