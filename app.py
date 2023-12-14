@@ -332,7 +332,7 @@ def main(args):
             'direction_offset': direction_offset
         })
         
-        with gr.Row():
+        with gr.Row(): 
             with gr.Column(scale=0.2):
                 with gr.Accordion("Direction"):
                     speed_r = gr.Number(value=0.15, label='Rotation Speed', step=0.01, minimum=0, maximum=1)
