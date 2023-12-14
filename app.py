@@ -335,7 +335,7 @@ def main(args):
         with gr.Row():
             with gr.Column(scale=0.2):
                 with gr.Accordion("Direction"):
-                    speed_r = gr.Number(value=0.1, label='Rotation Speed', step=0.01, minimum=0, maximum=1)
+                    speed_r = gr.Number(value=0.15, label='Rotation Speed', step=0.01, minimum=0, maximum=1)
                     speed_x = gr.Number(value=0, label='Speed X-axis', step=1, minimum=-10, maximum=20.0)
                     speed_y = gr.Number(value=0, label='Speed Y-axis', step=1, minimum=-10, maximum=20.0)
                     speed_z = gr.Number(value=5, label='Speed Z-axis', step=1, minimum=-10, maximum=20.0)
@@ -344,7 +344,7 @@ def main(args):
                         count = gr.Number(value=5, label='Num. of generated images', step=1, minimum=1, maximum=10, precision=0)
                         seed = gr.Number(value=19491000, label='Seed', precision=0)
                         t1 = gr.Slider(1, 49, 2, step=1, label='t1')
-                        t2 = gr.Slider(1, 49, 12, step=1, label='t2')
+                        t2 = gr.Slider(1, 49, 20, step=1, label='t2')
                         t3 = gr.Slider(1, 49, 27, step=1, label='t3')
                         lr = gr.Slider(0, 500, 300, step=1, label='Learning rate')
                         guidance_weight = gr.Slider(0, 10, 0.1, step=0.1, label='Feature correspondance guidance')
