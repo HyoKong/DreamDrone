@@ -1,6 +1,6 @@
 # DreamDrone
 
-*zero-shot training-free text-to-perceptual scene generation.*
+> *zero-shot training-free text-to-perceptual scene generation.*
 
 [[Project Page](https://hyokong.github.io/dreamdrone-page/)] [[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Gradio%20Demo-Huggingface-orange)](https://huggingface.co/spaces/imsuperkong/dreamdrone)] [[Paper](https://arxiv.org/abs/2312.08746)]
 
@@ -20,7 +20,6 @@ Michael Bi Mi,
 [Xinchao Wang](https://sites.google.com/site/sitexinchaowang/)
 </br> -->
 
----
 <table class="center">
 <tr>
   <td><img src="figs/Doomsday.gif" raw=true></td>
