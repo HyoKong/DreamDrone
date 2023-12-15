@@ -11,3 +11,4 @@ wget
 ipdb
 gradio==3.40.1
 accelerate
+
