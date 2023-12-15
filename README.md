@@ -12,13 +12,13 @@
 This repository is the official implementation of [DreamDrone](https://arxiv.org/abs/2312.08746).
 
 
-**[](https://arxiv.org/abs/2312.08746)**
+<!-- **[](https://arxiv.org/abs/2312.08746)**
 </br>
 [Hanyang Kong](https://hyokong.github.io/),
 [Dongze Lian](https://dongzelian.com), 
 Michael Bi Mi, 
 [Xinchao Wang](https://sites.google.com/site/sitexinchaowang/)
-</br>
+</br> -->
 
 ---
 <table class="center">
