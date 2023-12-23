@@ -56,7 +56,7 @@ Michael Bi Mi,
 ## ToDo
 
 - [ ] To add LCM to the pipeline for faster generating speed.
-- [ ] To add temporal filter to enhance the smoothness of the generated videos.
+- [ ] To add temporal filter for enhancing the smoothness of the generated videos.
 
 ## News
 
