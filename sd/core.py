@@ -251,22 +251,22 @@ class DDIMBackward(StableDiffusionPipeline):
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
 
                 # predict the noise residual
-                if guidance_loss_scale != 0:
-                    with torch.no_grad():
-                        noise_pred = self.unet(
-                            latent_model_input,
-                            t,
-                            encoder_hidden_states=prompt_embeds,
-                            cross_attention_kwargs=cross_attention_kwargs,
-                        ).sample
-                else:
-                    with torch.no_grad():
-                        noise_pred = self.unet(
-                            latent_model_input,
-                            t,
-                            encoder_hidden_states=prompt_embeds,
-                            cross_attention_kwargs=cross_attention_kwargs,
-                        ).sample
+                # if guidance_loss_scale != 0:
+                #     with torch.no_grad():
+                #         noise_pred = self.unet(
+                #             latent_model_input,
+                #             t,
+                #             encoder_hidden_states=prompt_embeds,
+                #             cross_attention_kwargs=cross_attention_kwargs,
+                #         ).sample
+                # else:
+                with torch.no_grad():
+                    noise_pred = self.unet(
+                        latent_model_input,
+                        t,
+                        encoder_hidden_states=prompt_embeds,
+                        cross_attention_kwargs=cross_attention_kwargs,
+                    ).sample
 
                 # perform guidance
                 if do_classifier_free_guidance:
